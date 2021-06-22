@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-
 function Home (){
     return (
             <div>
                 <h1>Home Page de teste</h1>
+                <a href="/sobre">Sobre</a>
+                <div className="titilo">ínicio</div>
                 <Contador />
            </div>
         )
