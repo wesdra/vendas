@@ -1,0 +1,134 @@
+/* @font-face {
+    font-family: 'qkBbXvYC6trAT7RVLtw';
+    src: url(./font/qkBbXvYC6trAT7RVLtw.eot);
+    src: url(./font/qkBbXvYC6trAT7RVLtw.eot?#iefix) format('embedded-opentype'),
+    url(./font/qkBbXvYC6trAT7RVLtw.otf) format('otf'),
+    url(./font/qkBbXvYC6trAT7RVLtw.svg#qkBbXvYC6trAT7RVLtw) format('svg'),
+    url(./font/qkBbXvYC6trAT7RVLtw.ttf) format('truetype'),
+    url(./font/qkBbXvYC6trAT7RVLtw.woff) format('woff'),
+    url(./font/qkBbXvYC6trAT7RVLtw.woff2) format('woff2');
+} */
+
+
+html > * {
+    letter-spacing: normal;
+}
+
+html, body, #main {
+    min-height: 100vh;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFB800;
+    position: relative;
+}
+#vendedores{
+    height:100%;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+    /* font-family: 'qkBbXvYC6trAT7RVLtw'; */
+    font-family: Helvetica, Sans-Serif;
+}
+
+.gsOFqj {
+    z-index: 0;
+    overflow: hidden;
+    margin-bottom: 8px;
+    transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+    border: 2px solid rgb(61, 59, 60);
+    background-color: rgb(61, 59, 60);
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+}
+.fxPOXp:focus {
+    outline: none;
+}
+
+.sc-bdfBwQ:hover{
+    background-color: #fff;
+    color:#000;
+    border-radius: 50px;
+}
+
+.gQMCNA {
+    position: relative;
+    height: auto;
+}
+
+
+.exGbzQ {
+    /*overflow-wrap: break-word;
+    word-break: break-word; */
+    white-space: nowrap;
+    overflow: hidden;
+    hyphens: auto;
+    white-space: normal;
+    background: none;
+    color: inherit;
+    transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.fxPOXp {
+    border: none;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 8px 66px;
+    margin: 0px;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.snEmw {
+    position: relative;
+}
+#main {
+    padding: 10px 20px;
+}
+
+#logo {
+    /* width: 80px; */
+    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#load {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+}
+.text {
+    text-align: center;
+    padding: 5px;
+}
+.online {
+    background: url('/online.png') no-repeat  10px;
+}
+.offline{
+    background: url('/offline.png') no-repeat 10px;
+    color: #666464;
+}
+ 

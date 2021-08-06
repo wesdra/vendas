@@ -1,25 +1,20 @@
 {
-  "name": "Vendas",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vendasmo",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wesdra/vendas.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wesdra/vendas/issues"
-  },
-  "homepage": "https://github.com/wesdra/vendas#readme",
   "dependencies": {
-    "next": "^11.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.0.1"
   }
 }
