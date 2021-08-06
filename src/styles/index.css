@@ -125,10 +125,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 5px;
 }
 .online {
-    background: url('/online.png') no-repeat  10px;
+    background: url('/img/online.png') no-repeat  10px;
 }
 .offline{
-    background: url('/offline.png') no-repeat 10px;
+    background: url('/img/offline.png') no-repeat 10px;
     color: #666464;
 }
  
