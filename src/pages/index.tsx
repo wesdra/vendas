@@ -16,8 +16,8 @@ function Home() {
             { nome: 'Vendedor Daniel', link: 'https://bit.ly/3dn8nA0', id: '3dn8nA0' },
             { nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
             { nome: 'Vendedor Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
-            { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3rdGYbR', id: '3rdGYbR'},
-            { nome: 'Vendedora Taina', link: 'https://bit.ly/2UIs0yd', id: '2UIs0yd'}
+            { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3rdGYbR', id: '3rdGYbR' },
+            { nome: 'Vendedora Taina', link: 'https://bit.ly/2UIs0yd', id: '2UIs0yd' }
         ];
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
@@ -29,20 +29,20 @@ function Home() {
     //     localStorage.setItem("movend", 0);
     // }, []);
 
-    function redirect(id:string) {
+    function redirect(id: string) {
         setTimeout(function () {
             window.location.assign("https://bit.ly/" + id);
         }, 500);
     }
 
-    function add(id:string) {
+    function add(id: string) {
         localStorage.setItem("movend", id);
     }
     function get() {
         return localStorage.getItem("movend");
     }
 
-    function limpar(e:Event) {
+    function limpar(e: Event) {
         e.preventDefault()
         localStorage.removeItem("movend");
 
@@ -51,7 +51,7 @@ function Home() {
         }, 500);
     }
 
-    function idc(id:string) {
+    function idc(id: string) {
         var atual = localStorage.getItem("movend");
         var idc = atual === id ? "online" : "offline";
         if (atual === null)
@@ -59,22 +59,29 @@ function Home() {
         return idc
     }
 
-    function aoclicar(e: React.ChangeEvent<HTMLLinkElement>) {
+    function aoclicar(e:any) {
         e.preventDefault()
-        console.log(e.currentTarget.dataset.id)
-        console.log(e.currentTarget.dataset.status)
-        var status = (e.currentTarget.dataset.status);
-        var id = (e.currentTarget.dataset.id);
-        
+        const target = e.currentTarget as HTMLLinkElement;
+        console.log(target.dataset.id)
+        console.log(target.dataset.status)
+        var status = (target.dataset.status);
+        var id = (target.dataset.id);
+
+        //e.preventDefault()
+        // console.log(e.currentTarget.dataset.id)
+        // console.log(e.currentTarget.dataset.status)
+        // var status = (e.currentTarget.dataset.status);
+        // var id = (e.currentTarget.dataset.id);
+
         if (status === "online") {
             add(id);
-            redirect(id);
+            // redirect(id);
         }
 
         if (status === "offline") {
             var atual = get();
             var redir = atual != null ? atual : id;
-            redirect(redir);
+            //redirect(redir);
         }
     }
 
@@ -99,7 +106,7 @@ function Home() {
 
             <main className={styles.main}>
                 <Image src="/mo.png" alt="Vercel Logo" width={100} height={100} />
-                
+
                 {/* <h1 className={styles.title}>
                     Nosso atendimento é pelo Whatsapp
                 </h1> */}
@@ -108,12 +115,12 @@ function Home() {
 
                 <p className="titilo">Nosso atendimento é pelo Whatsapp</p>
 
-              
+
                 {equipe.map(data => (
                     <div key={data.id} className="styles sc-bdfBwQ snEmw">
                         <div data-testid="StyledContainer" className="sc-bdfBwQ sc-ctaXAZ gQMCNA gsOFqj">
-                            <a href={`#${data.link}`} rel={data.id} onClick={(e) => aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`} data-testid="LinkButton" display="inline-flex"
-                                height="auto"
+                            <a href={`#${data.link}`} rel={data.id} onClick={(e) => this.aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`} 
+
                                 className={`sc-pFZIQ sc-tYoTV fxPOXp exGbzQ ${idc(data.id)}`}>
                                 <p className="sc-hKgILt cdcUDS">{data.nome}</p>
                             </a>
@@ -122,7 +129,7 @@ function Home() {
                 ))}
 
             </main>
-            <a href="#" onClick={(e) => limpar(e)} >º</a>
+            <a href="#" onClick={(e) => this.limpar(e)} >º</a>
         </div>
     )
 }
