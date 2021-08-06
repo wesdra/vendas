@@ -29,21 +29,20 @@ function Home() {
     //     localStorage.setItem("movend", 0);
     // }, []);
 
-    function redirect(id) {
+    function redirect(id:string) {
         setTimeout(function () {
             window.location.assign("https://bit.ly/" + id);
         }, 500);
     }
 
-    function add(id) {
+    function add(id:string) {
         localStorage.setItem("movend", id);
-        //vendedores(300);
     }
     function get() {
         return localStorage.getItem("movend");
     }
 
-    function limpar(e) {
+    function limpar(e:Event) {
         e.preventDefault()
         localStorage.removeItem("movend");
 
@@ -52,7 +51,7 @@ function Home() {
         }, 500);
     }
 
-    function idc(id) {
+    function idc(id:string) {
         var atual = localStorage.getItem("movend");
         var idc = atual === id ? "online" : "offline";
         if (atual === null)
@@ -60,21 +59,19 @@ function Home() {
         return idc
     }
 
-    function aoclicar(e) {
+    function aoclicar(e: React.ChangeEvent<HTMLLinkElement>) {
         e.preventDefault()
-        //console.log(e.currentTarget.dataset.id)
-        //console.log(e.currentTarget.dataset.status)
+        console.log(e.currentTarget.dataset.id)
+        console.log(e.currentTarget.dataset.status)
         var status = (e.currentTarget.dataset.status);
         var id = (e.currentTarget.dataset.id);
         
         if (status === "online") {
-           // var id = $(this).attr('rel');
             add(id);
             redirect(id);
         }
 
         if (status === "offline") {
-            //var id = $(this).attr('rel');
             var atual = get();
             var redir = atual != null ? atual : id;
             redirect(redir);
