@@ -121,7 +121,7 @@ function Home() {
                 {equipe.map(data => (
                     <div key={data.id} className="styles sc-bdfBwQ snEmw">
                         <div data-testid="StyledContainer" className="sc-bdfBwQ sc-ctaXAZ gQMCNA gsOFqj">
-                            <a href={`#${data.link}`} rel={data.id} onClick={(e) => this.aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`} 
+                            <a href={`#${data.link}`} rel={data.id} onClick={(e) => aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`} 
 
                                 className={`sc-pFZIQ sc-tYoTV fxPOXp exGbzQ ${idc(data.id)}`}>
                                 <p className="sc-hKgILt cdcUDS">{data.nome}</p>
@@ -131,7 +131,7 @@ function Home() {
                 ))}
 
             </main>
-            <a href="#" onClick={(e) => this.limpar(e)} >º</a>
+            <a href="#" onClick={(e) => limpar(e)} >º</a>
         </div>
     )
 }
