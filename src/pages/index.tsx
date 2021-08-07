@@ -129,7 +129,7 @@ function Home() {
                         </div>
                     </div>
                 ))}
-                <a href="#" onClick={(e) => limpar(e)} >º</a>
+                <a href="#" onClick={() => limpar()} >º</a>
             </main>
             
         </div>
