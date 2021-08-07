@@ -31,7 +31,8 @@ function Home() {
 
     function redirect(id: string) {
         setTimeout(function () {
-            window.location.assign("https://bit.ly/" + id);
+            //window.location.assign("https://bit.ly/" + id);
+            window.location.href = "https://bit.ly/" + id;
         }, 500);
     }
 
@@ -47,7 +48,8 @@ function Home() {
         localStorage.removeItem("movend");
 
         setTimeout(function () {
-            window.location.assign("/");
+            //window.location.assign("/");
+            window.location.href = "/";
         }, 500);
     }
 
@@ -75,13 +77,13 @@ function Home() {
 
         if (status === "online") {
             add(id);
-            // redirect(id);
+             redirect(id);
         }
 
         if (status === "offline") {
             var atual = get();
             var redir = atual != null ? atual : id;
-            //redirect(redir);
+            redirect(redir);
         }
     }
 
