@@ -43,8 +43,8 @@ function Home() {
         return localStorage.getItem("movend");
     }
 
-    function limpar(e: Event) {
-        e.preventDefault()
+    function limpar() {
+        //e.preventDefault()
         localStorage.removeItem("movend");
 
         setTimeout(function () {
@@ -129,9 +129,9 @@ function Home() {
                         </div>
                     </div>
                 ))}
-
+                <a href="#" onClick={(e) => limpar(e)} >º</a>
             </main>
-            <a href="#" onClick={(e) => this.limpar(e)} >º</a>
+            
         </div>
     )
 }
