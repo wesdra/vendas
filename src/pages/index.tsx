@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import api from '../services/api';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -14,7 +15,6 @@ function Home() {
             { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
             { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
             { nome: 'Vendedor Daniel', link: 'https://bit.ly/3dn8nA0', id: '3dn8nA0' },
-            { nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
             { nome: 'Vendedor Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
             { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3rdGYbR', id: '3rdGYbR' },
             { nome: 'Vendedora Taina', link: 'https://bit.ly/2UIs0yd', id: '2UIs0yd' }
@@ -24,7 +24,7 @@ function Home() {
         });
         setEquipe(novalista);
     }, [])
-
+//{ nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
     // useEffect(() => {
     //     localStorage.setItem("movend", 0);
     // }, []);
@@ -35,6 +35,18 @@ function Home() {
             window.location.href = "https://bit.ly/" + id;
         }, 500);
     }
+
+    function catraca(e:any) {
+        e.preventDefault()
+
+        api.post('/api/vendedor').then(response => {
+            console.log(response.data);
+            //console.log(response.data.urlwhatsapp);
+            redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
+        });
+
+    }
+
 
     function add(id: string) {
         localStorage.setItem("movend", id);
@@ -130,6 +142,8 @@ function Home() {
                     </div>
                 ))}
                 <a href="#" onClick={() => limpar()} >º</a>
+
+                <a href="#" onClick={(e) => catraca(e)} >catraca</a>
             </main>
             
         </div>
