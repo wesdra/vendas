@@ -14,7 +14,6 @@ function Home() {
             { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
             { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
             { nome: 'Vendedor Daniel', link: 'https://bit.ly/3dn8nA0', id: '3dn8nA0' },
-            { nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
             { nome: 'Vendedora Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
             { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3rdGYbR', id: '3rdGYbR' },
             { nome: 'Vendedora Taina', link: 'https://bit.ly/2UIs0yd', id: '2UIs0yd' }
@@ -24,7 +23,7 @@ function Home() {
         });
         setEquipe(novalista);
     }, [])
-
+// { nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
     // useEffect(() => {
     //     localStorage.setItem("movend", 0);
     // }, []);
