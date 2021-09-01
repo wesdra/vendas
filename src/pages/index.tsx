@@ -27,7 +27,7 @@ function Home() {
             { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
             { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
             { nome: 'Vendedor Daniel', link: 'https://bit.ly/3dn8nA0', id: '3dn8nA0' },
-            { nome: 'Vendedor Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
+            { nome: 'Vendedora Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
             { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3rdGYbR', id: '3rdGYbR' },
             { nome: 'Vendedora Taina', link: 'https://bit.ly/2UIs0yd', id: '2UIs0yd' }
         ];
@@ -47,7 +47,7 @@ function Home() {
         setTimeout(function () {
             //window.location.assign("https://bit.ly/" + id);
             window.location.href = "https://bit.ly/" + id;
-        }, 500);
+        }, 100);
     }
 
     function catraca(e:any) {
