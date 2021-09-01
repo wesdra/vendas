@@ -1,8 +1,20 @@
 import { useState, useEffect } from 'react';
 import api from '../services/api';
+import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+
+interface Ivendedor {
+    id:number,
+    nome:string,
+    urlwhatsapp:string,
+}
+
+//     "id": 2,
+//     "nome": "Ednaldo",
+//     "urlwhatsapp": "https://bit.ly/3jbAWED"
+//   }
 
 function Home() {
     const [equipe, setEquipe] = useState([]);
@@ -22,9 +34,11 @@ function Home() {
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
         });
+
         setEquipe(novalista);
-    }, [])
-//{ nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
+    }, []);
+    
+    //{ nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
     // useEffect(() => {
     //     localStorage.setItem("movend", 0);
     // }, []);
@@ -39,11 +53,42 @@ function Home() {
     function catraca(e:any) {
         e.preventDefault()
 
-        api.post('/api/vendedor').then(response => {
+        api.post('/api/vendedor',{
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+          }).then(response => {
             console.log(response.data);
             //console.log(response.data.urlwhatsapp);
-            redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
+           // redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
         });
+
+
+
+        const params = {
+            format: 'json',
+            option: 'value'
+          };
+          
+          const data = Object.keys(params)
+            .map((key) => `${key}=${encodeURIComponent(params[key])}`)
+            .join('&');
+          
+          console.log(data);
+          // => format=json&option=value
+       
+
+          const options = {
+            method: 'POST',
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+            data,
+            url: 'https://megaoutletsofa.com.br/api/Vendedor',
+          };
+          
+          const response = api.post('/api/Vendedor',{
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+          });  // wrap in async function
+          console.log(response);
+
+
 
     }
 
@@ -143,7 +188,7 @@ function Home() {
                 ))}
                 <a href="#" onClick={() => limpar()} >º</a>
 
-                <a href="#" onClick={(e) => catraca(e)} >catraca</a>
+                <a href="#" onClick={(e) => catraca(e)} >-</a>
             </main>
             
         </div>
