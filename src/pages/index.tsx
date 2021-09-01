@@ -1,26 +1,12 @@
 import { useState, useEffect } from 'react';
 import api from '../services/api';
-import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-interface Ivendedor {
-    id:number,
-    nome:string,
-    urlwhatsapp:string,
-}
-
-//     "id": 2,
-//     "nome": "Ednaldo",
-//     "urlwhatsapp": "https://bit.ly/3jbAWED"
-//   }
-
 function Home() {
     const [equipe, setEquipe] = useState([]);
     //const  [ equipe, setEquipe ] = useState([]);
-
-
     useEffect(() => {
         const lista = [
             { nome: 'Vendedora Monise', link: 'https://bit.ly/3295waJ', id: '3295waJ' },
@@ -188,7 +174,7 @@ function Home() {
                 ))}
                 <a href="#" onClick={() => limpar()} >º</a>
 
-                <a href="#" onClick={(e) => catraca(e)} >-</a>
+                <a href="#" onClick={(e) => catraca(e)} >º</a>
             </main>
             
         </div>
