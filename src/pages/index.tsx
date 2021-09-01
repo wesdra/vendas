@@ -63,30 +63,30 @@ function Home() {
 
 
 
-        const params = {
-            format: 'json',
-            option: 'value'
-          };
+        // const params = {
+        //     format: 'json',
+        //     option: 'value'
+        //   };
           
-          const data = Object.keys(params)
-            .map((key) => `${key}=${encodeURIComponent(params[key])}`)
-            .join('&');
+        //   const data = Object.keys(params)
+        //     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
+        //     .join('&');
           
-          console.log(data);
-          // => format=json&option=value
+        //   console.log(data);
+        //   // => format=json&option=value
        
 
-          const options = {
-            method: 'POST',
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
-            data,
-            url: 'https://megaoutletsofa.com.br/api/Vendedor',
-          };
+        //   const options = {
+        //     method: 'POST',
+        //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        //     data,
+        //     url: 'https://megaoutletsofa.com.br/api/Vendedor',
+        //   };
           
-          const response = api.post('/api/Vendedor',{
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
-          });  // wrap in async function
-          console.log(response);
+        //   const response = api.post('/api/Vendedor',{
+        //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        //   });  // wrap in async function
+        //   console.log(response);
 
 
 
