@@ -39,13 +39,13 @@ function Home() {
     function catraca(e:any) {
         e.preventDefault()
 
-        api.post('/api/vendedor',{
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
-          }).then(response => {
-            console.log(response.data);
-            //console.log(response.data.urlwhatsapp);
-           // redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
-        });
+        // api.post('/api/vendedor',{
+        //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        //   }).then(response => {
+        //     console.log(response.data);
+        //     //console.log(response.data.urlwhatsapp);
+        //    // redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
+        // });
 
 
 
