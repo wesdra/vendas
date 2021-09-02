@@ -6,6 +6,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 function Home() {
+  const  [ BtnLoading, setBtnLoading ] = useState(false);
   const mainVideo = "/edicaofinal.mp4";
   
   const isSafari = () => {
@@ -22,7 +23,7 @@ function Home() {
 
   function catraca(e: any) {
     e.preventDefault()
-
+    setBtnLoading(true);
     api.post('/api/vendedor').then(response => {
       console.log(response.data);
       let id = response.data.urlwhatsapp.replace('https://bit.ly/', '');
@@ -38,6 +39,7 @@ function Home() {
         let redir = atual != null ? atual : id;
         redirect(redir);
       }
+      setBtnLoading(false);
     });
   }
 
@@ -117,7 +119,7 @@ function Home() {
           width="100%"
           playing
           loop
-          url="https://www.youtube.com/watch?v=dNAwUUUaiqQ"
+          url="https://www.youtube.com/watch?v=dNAwUUUaiqQ&showinfo=0&enablejsapi=1&origin=https://vendas.megaoutletsofa.com.br/"
          
         />
         {/* {src: 'foo.ogg', type: 'video/ogg'} */}
@@ -136,7 +138,7 @@ function Home() {
             <a href={`#`} onClick={(e) => catraca(e)}
 
               className={`sc-pFZIQ sc-tYoTV fxPOXp exGbzQ online`}>
-              <p className="sc-hKgILt cdcUDS">Iniciar atendimento </p>
+              <p className="sc-hKgILt cdcUDS">  {BtnLoading ? "Aguarde..." : "Iniciar atendimento"} </p>
             
             </a>
           </div>
