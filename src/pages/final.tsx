@@ -117,11 +117,8 @@ function Home() {
           width="100%"
           playing
           loop
-          url={[
-            {src: filemp4 , type: 'video/mp4'},
-            {src: filewebm, type: 'video/webm'},
-            {src: fileogg, type: 'video/ogg'}
-          ]}
+          url="https://www.youtube.com/watch?v=dNAwUUUaiqQ"
+         
         />
         {/* {src: 'foo.ogg', type: 'video/ogg'} */}
         {/* <h1 className={styles.title}>
