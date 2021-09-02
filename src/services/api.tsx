@@ -1,7 +1,7 @@
 import axios from 'axios';
 const api = axios.create({
    
-    baseURL: 'http://wrwebleilao.azurewebsites.net',
+    baseURL: 'https://wrwebleilao.azurewebsites.net',
 });
    // baseURL: 'http://localhost:6449',
 //baseURL: 'https://megaoutletsofa.com.br',
