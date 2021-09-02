@@ -7,24 +7,26 @@ import styles from '../styles/Home.module.css'
 function Home() {
     const [equipe, setEquipe] = useState([]);
     //const  [ equipe, setEquipe ] = useState([]);
+
+
     useEffect(() => {
         const lista = [
             { nome: 'Vendedora Monise', link: 'https://bit.ly/3295waJ', id: '3295waJ' },
             { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
             { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
             { nome: 'Vendedor Daniel', link: 'https://bit.ly/3dn8nA0', id: '3dn8nA0' },
-            { nome: 'Vendedora Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
+            { nome: 'Vendedor Reginaldo', link: 'https://bit.ly/3jAKvyw', id: '3jAKvyw' },
+            { nome: 'Vendedor Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
             { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3rdGYbR', id: '3rdGYbR' },
             { nome: 'Vendedora Taina', link: 'https://bit.ly/2UIs0yd', id: '2UIs0yd' }
         ];
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
         });
-
         setEquipe(novalista);
     }, []);
     
-    //{ nome: 'Vendedor Rafael', link: 'https://bit.ly/3nq0Y7D', id: '3nq0Y7D' },
+    //
     // useEffect(() => {
     //     localStorage.setItem("movend", 0);
     // }, []);
@@ -33,7 +35,7 @@ function Home() {
         setTimeout(function () {
             //window.location.assign("https://bit.ly/" + id);
             window.location.href = "https://bit.ly/" + id;
-        }, 100);
+        }, 500);
     }
 
     function catraca(e:any) {
@@ -42,39 +44,8 @@ function Home() {
         api.post('/api/vendedor').then(response => {
             console.log(response.data);
             //console.log(response.data.urlwhatsapp);
-           // redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
+            redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
         });
-        // ,{
-        //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        //   }
-
-
-        // const params = {
-        //     format: 'json',
-        //     option: 'value'
-        //   };
-          
-        //   const data = Object.keys(params)
-        //     .map((key) => `${key}=${encodeURIComponent(params[key])}`)
-        //     .join('&');
-          
-        //   console.log(data);
-        //   // => format=json&option=value
-       
-
-        //   const options = {
-        //     method: 'POST',
-        //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        //     data,
-        //     url: 'https://megaoutletsofa.com.br/api/Vendedor',
-        //   };
-          
-        //   const response = api.post('/api/Vendedor',{
-        //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        //   });  // wrap in async function
-        //   console.log(response);
-
-
 
     }
 
@@ -152,6 +123,7 @@ function Home() {
             <main className={styles.main}>
                 <Image src="/mo.png" alt="Vercel Logo" width={100} height={100} />
 
+     {/* {src: 'foo.ogg', type: 'video/ogg'} */}
                 {/* <h1 className={styles.title}>
                     Nosso atendimento é pelo Whatsapp
                 </h1> */}
@@ -174,7 +146,7 @@ function Home() {
                 ))}
                 <a href="#" onClick={() => limpar()} >º</a>
 
-                <a href="#" onClick={(e) => catraca(e)} >º</a>
+                {/* <a href="#" onClick={(e) => catraca(e)} >catraca</a> */}
             </main>
             
         </div>
