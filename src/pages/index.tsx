@@ -12,8 +12,6 @@ function Home() {
     useEffect(() => {
         const lista = [
             { nome: 'Vendedora Monise', link: 'https://bit.ly/3295waJ', id: '3295waJ' },
-           
-            { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
             { nome: 'Vendedor Daniel', link: 'https://bit.ly/3dn8nA0', id: '3dn8nA0' },
             { nome: 'Vendedor Rogerio', link: 'https://bit.ly/3jAKvyw', id: '3jAKvyw' },
             { nome: 'Vendedora Fernanda', link: 'https://bit.ly/36N1mq8', id: '36N1mq8' },
@@ -26,7 +24,7 @@ function Home() {
         setEquipe(novalista);
     }, []);
     // { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
-    //
+    // { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
     // useEffect(() => {
     //     localStorage.setItem("movend", 0);
     // }, []);
