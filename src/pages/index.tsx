@@ -11,14 +11,14 @@ function Home() {
 
     useEffect(() => {
         const lista = [
-            { nome: 'Vendedora Monise', link: 'https://bit.ly/3onMfOk', id: '3onMfOk' },
-            { nome: 'Vendedor Daniel', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n' },
-            { nome: 'Vendedor Rogerio', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM' },
-            { nome: 'Vendedora Fernanda', link: 'https://bit.ly/39TYFVO', id: '39TYFVO' },
-            { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3uqAvM0', id: '3uqAvM0' },
-            { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/39WBASx', id: '39WBASx' },
-            { nome: 'Vendedora Taina', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt' }
+            { nome: 'Vendedora Monise', link: 'https://bit.ly/3onMfOk', id: '3onMfOk' , antigo: '3295waJ' },
+            { nome: 'Vendedor Daniel', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n',  antigo: '3dn8nA0' },
+            { nome: 'Vendedor Rogerio', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM',  antigo: '3jAKvyw'  },
+            { nome: 'Vendedora Fernanda', link: 'https://bit.ly/39TYFVO', id: '39TYFVO',  antigo: '36N1mq8'  },
+            { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/39WBASx', id: '39WBASx',  antigo: '3jbAWED'  },
+            { nome: 'Vendedora Taina', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt',  antigo: '2UIs0yd'  }
         ];
+
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
         });
@@ -26,15 +26,16 @@ function Home() {
     }, []);
     // { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
     // { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
+    // { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3uqAvM0', id: '3uqAvM0' },
     // useEffect(() => {
-    //     localStorage.setItem("movend", 0);
+    //     localStorage.setItem("moid", 0);
     // }, []);
 
     function redirect(id: string) {
         setTimeout(function () {
             //window.location.assign("https://bit.ly/" + id);
             window.location.href = "https://bit.ly/" + id;
-        }, 500);
+        }, 10);
     }
 
     function catraca(e:any) {
@@ -50,29 +51,37 @@ function Home() {
 
 
     function add(id: string) {
-        localStorage.setItem("movend", id);
+        localStorage.setItem("moid", id);
     }
     function get() {
-        return localStorage.getItem("movend");
+        return localStorage.getItem("moid");
     }
 
     function limpar() {
         //e.preventDefault()
-        localStorage.removeItem("movend");
+        localStorage.removeItem("moid");
 
         setTimeout(function () {
             //window.location.assign("/");
             window.location.href = "/";
-        }, 500);
+        }, 10);
     }
 
     function idc(id: string) {
-        var atual = localStorage.getItem("movend");
+        var atual = localStorage.getItem("moid");
         var idc = atual === id ? "online" : "offline";
         if (atual === null)
             idc = "online";
+
         return idc
     }
+
+    // function buscaPorId(id: string){
+    //     var vend = equipe.find(item => item.antigo = id);
+    //     console.log('vend',vend);
+    //     return vend.id;
+    // }
+
 
     function aoclicar(e:any) {
         e.preventDefault()
