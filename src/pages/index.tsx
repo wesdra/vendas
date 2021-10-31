@@ -16,7 +16,8 @@ function Home() {
             { nome: 'Vendedor Rogerio', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM',  antigo: '3jAKvyw'  },
             { nome: 'Vendedora Fernanda', link: 'https://bit.ly/39TYFVO', id: '39TYFVO',  antigo: '36N1mq8'  },
             { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/39WBASx', id: '39WBASx',  antigo: '3jbAWED'  },
-            { nome: 'Vendedora Taina', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt',  antigo: '2UIs0yd'  }
+            { nome: 'Vendedora Taina', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt',  antigo: '2UIs0yd'  },
+            { nome: 'Vendedora Aline', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq',  antigo: '3vMpGVq'  }
         ];
 
         var novalista = lista.sort(function () {
