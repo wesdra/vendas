@@ -246,7 +246,20 @@ function Home() {
 
 
                 {/* <a href="#" onClick={(e) => catraca(e)} >catraca</a> */}
-                <a href="#" onClick={() => limpar()} >º</a>
+                <a className="limpar" href="#" onClick={() => limpar()} >º</a>
+
+                {/* 
+         
+                <a href="#" onClick={() => limpar()} >SAC</a>
+                        <a href="#" onClick={() => limpar()} >OUVIDORIA</a> */}
+
+                {/* <nav className="navMenu">
+                    <a href="#" onClick={() => limpar()} >SAC</a>
+                    <a href="mailto:ouvidoria@megaoutletsofa.com.br">OUVIDORIA</a>
+                    <div className="dot"></div>
+                </nav> */}
+
+
             </main>
 
         </div>
