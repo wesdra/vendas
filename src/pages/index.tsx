@@ -205,7 +205,7 @@ function Home() {
                         <div key={data.id} className="column">
                             <a href={`#${data.link}`} rel={data.id} onClick={(e) => aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`}
                                 className={`sc-pFZIQ sc-tYoTV fxPOXp exGbzQ ${idc(data.id)}`}>
-                                <img src={data.img} alt={data.nome} /></a>
+                                <Image src={data.img} alt={data.nome} layout="intrinsic"  width={262} height={465}  className={'image'}/></a>
                             <div className="online-indicator dentro">
                                 <span className="blink blinkonline"></span>
                             </div>
@@ -230,7 +230,7 @@ function Home() {
                         <div key={data.id} className="column">
 
 
-                            <img src={data.img} alt={data.nome} />
+                            <Image src={data.img} alt={data.nome}  layout="intrinsic" width={262} height={465}  className={'image'}/>
                             <div className="offline-indicator dentro">
                                 <span className="blink blinkoffline"></span>
                             </div>
