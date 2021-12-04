@@ -12,7 +12,7 @@ function Home() {
     useEffect(() => {
         const lista = [
            
-            { nome: 'Vendedor Daniel', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n',  antigo: '3dn8nA0' },
+            
             { nome: 'Vendedor Rogerio', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM',  antigo: '3jAKvyw'  },
             { nome: 'Vendedora Fernanda', link: 'https://bit.ly/39TYFVO', id: '39TYFVO',  antigo: '36N1mq8'  },
             { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/39WBASx', id: '39WBASx',  antigo: '3jbAWED'  },
@@ -22,6 +22,7 @@ function Home() {
         ];
 
         // { nome: 'Vendedora Monise', link: 'https://bit.ly/3onMfOk', id: '3onMfOk' , antigo: '3295waJ' },
+        //{ nome: 'Vendedor Daniel', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n',  antigo: '3dn8nA0' },
 
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
