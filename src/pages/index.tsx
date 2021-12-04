@@ -8,16 +8,13 @@ function Home() {
     const [equipe, setEquipe] = useState([]);
     const [equipeoff, setEquipeoff] = useState([]);
 
-
     useEffect(() => {
         const lista = [
-
-
             { nome: 'Rogerio', img: '/img/rogerio.png', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM', antigo: '3jAKvyw' },
             { nome: 'Fernanda', img: '/img/fernanda.png', link: 'https://bit.ly/39TYFVO', id: '39TYFVO', antigo: '36N1mq8' },
             { nome: 'Ednaldo', img: '/img/ednaldo.png', link: 'https://bit.ly/39WBASx', id: '39WBASx', antigo: '3jbAWED' },
             { nome: 'Taina', img: '/img/taina.png', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt', antigo: '2UIs0yd' },
-            { nome: 'Aline', img: '/img/aline.png', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq', antigo: '3vMpGVq' },
+            { nome: 'Aline', img: '/img/alinee.png', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq', antigo: '3vMpGVq' },
             { nome: 'Marta', img: '/img/marta.png', link: 'https://bit.ly/3BOTmCJ', id: '3BOTmCJ', antigo: '3BOTmCJ' }
         ];
         const listaoff = [
