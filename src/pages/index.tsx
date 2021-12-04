@@ -6,28 +6,29 @@ import styles from '../styles/Home.module.css'
 
 function Home() {
     const [equipe, setEquipe] = useState([]);
-    //const  [ equipe, setEquipe ] = useState([]);
+    const [equipeoff, setEquipeoff] = useState([]);
 
 
     useEffect(() => {
         const lista = [
-           
-            
-            { nome: 'Vendedor Rogerio', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM',  antigo: '3jAKvyw'  },
-            { nome: 'Vendedora Fernanda', link: 'https://bit.ly/39TYFVO', id: '39TYFVO',  antigo: '36N1mq8'  },
-            { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/39WBASx', id: '39WBASx',  antigo: '3jbAWED'  },
-            { nome: 'Vendedora Taina', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt',  antigo: '2UIs0yd'  },
-            { nome: 'Vendedora Aline', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq',  antigo: '3vMpGVq'  },
-            { nome: 'Vendedora Marta', link: 'https://bit.ly/3BOTmCJ', id: '3BOTmCJ',  antigo: '3BOTmCJ'  }
+
+
+            { nome: 'Rogerio', img: '/img/rogerio.png', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM', antigo: '3jAKvyw' },
+            { nome: 'Fernanda', img: '/img/fernanda.png', link: 'https://bit.ly/39TYFVO', id: '39TYFVO', antigo: '36N1mq8' },
+            { nome: 'Ednaldo', img: '/img/ednaldo.png', link: 'https://bit.ly/39WBASx', id: '39WBASx', antigo: '3jbAWED' },
+            { nome: 'Taina', img: '/img/taina.png', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt', antigo: '2UIs0yd' },
+            { nome: 'Aline', img: '/img/aline.png', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq', antigo: '3vMpGVq' },
+            { nome: 'Marta', img: '/img/marta.png', link: 'https://bit.ly/3BOTmCJ', id: '3BOTmCJ', antigo: '3BOTmCJ' }
         ];
-
-        // { nome: 'Vendedora Monise', link: 'https://bit.ly/3onMfOk', id: '3onMfOk' , antigo: '3295waJ' },
-        //{ nome: 'Vendedor Daniel', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n',  antigo: '3dn8nA0' },
-
+        const listaoff = [
+            { nome: 'Monise', img: '/img/monise.png', link: 'https://bit.ly/3onMfOk', id: '3onMfOk', antigo: '3295waJ' },
+            { nome: 'Daniel', img: '/img/daniel.png', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n', antigo: '3dn8nA0' }
+        ];
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
         });
         setEquipe(novalista);
+        setEquipeoff(listaoff);
     }, []);
     // { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
     // { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
@@ -43,13 +44,13 @@ function Home() {
         }, 10);
     }
 
-    function catraca(e:any) {
+    function catraca(e: any) {
         e.preventDefault()
 
         api.post('/api/vendedor').then(response => {
             console.log(response.data);
             //console.log(response.data.urlwhatsapp);
-            redirect(response.data.urlwhatsapp.replace('https://bit.ly/',''));
+            redirect(response.data.urlwhatsapp.replace('https://bit.ly/', ''));
         });
 
     }
@@ -88,11 +89,11 @@ function Home() {
     // }
 
 
-    function aoclicar(e:any) {
+    function aoclicar(e: any) {
         e.preventDefault()
         const target = e.currentTarget as HTMLLinkElement;
-        console.log(target.dataset.id)
-        console.log(target.dataset.status)
+        //console.log(target.dataset.id)
+        //console.log(target.dataset.status)
         var status = (target.dataset.status);
         var id = (target.dataset.id);
 
@@ -102,9 +103,20 @@ function Home() {
         // var status = (e.currentTarget.dataset.status);
         // var id = (e.currentTarget.dataset.id);
 
+
+        //se o ultimo atendimento estiver offline permite chamar outro
+        const result = equipeoff.find(item => item.id === get());
+        if (result) {
+            //console.log("result");
+            //console.log(result);
+            add(id);
+            redirect(id);
+        }
+
+
         if (status === "online") {
             add(id);
-             redirect(id);
+            redirect(id);
         }
 
         if (status === "offline") {
@@ -134,34 +146,109 @@ function Home() {
             </Head>
 
             <main className={styles.main}>
-                <Image src="/mo.png" alt="Vercel Logo" width={100} height={100} />
-
-     {/* {src: 'foo.ogg', type: 'video/ogg'} */}
+                {/* <Image src="/mo.png" alt="Vercel Logo" width={100} height={100} /> */}
+                <img className="logo" src="/mo.png" alt="Vercel Logo" />
+                {/* {src: 'foo.ogg', type: 'video/ogg'} */}
                 {/* <h1 className={styles.title}>
                     Nosso atendimento é pelo Whatsapp
                 </h1> */}
 
                 {/* <Link href="/sobre"><a>Sobre</a></Link> */}
 
-                <p className="titilo">Nosso atendimento é pelo Whatsapp</p>
+                <p className="titulo">Nosso atendimento é pelo Whatsapp</p>
+                <div className="sub">
+                    <div className="online-indicator">
+                        <span className="blink blinkonline"></span>
+                    </div>
 
-
+                    <h2 className="online-text text-verde">Equipe Online</h2>
+                </div>
+                {/* 
                 {equipe.map(data => (
                     <div key={data.id} className="styles sc-bdfBwQ snEmw">
                         <div data-testid="StyledContainer" className="sc-bdfBwQ sc-ctaXAZ gQMCNA gsOFqj">
                             <a href={`#${data.link}`} rel={data.id} onClick={(e) => aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`} 
 
                                 className={`sc-pFZIQ sc-tYoTV fxPOXp exGbzQ ${idc(data.id)}`}>
-                                <p className="sc-hKgILt cdcUDS">{data.nome}</p>
+                                    
+                                <p className="sc-hKgILt cdcUDS"> {data.nome} <div className="circular--portrait">
+                                <img src="/img/fernanda.png" />
+                   
+                                </div></p>
                             </a>
                         </div>
                     </div>
                 ))}
-                <a href="#" onClick={() => limpar()} >º</a>
+               <p className="titilo">s</p>
+                <div className="styles sc-bdfBwQ snEmw">
+                    <div data-testid="StyledContainer" className="sc-bdfBwQ sc-ctaXAZ gQMCNA gsOFqj">
+                        <a href="#" rel="2Y6DHkt" data-id="2Y6DHkt" data-status="offline" className="sc-pFZIQ sc-tYoTV fxPOXp exGbzQ offline">
+                            <p className="sc-hKgILt cdcUDS">Vendedor Daniel * Férias</p>
+                        </a>
+                    </div>
+                </div>               
+
+                <div className="styles sc-bdfBwQ snEmw">
+                    <div data-testid="StyledContainer" className="sc-bdfBwQ sc-ctaXAZ gQMCNA gsOFqj">
+                        <a href="#" rel="2Y6DHkt" data-id="2Y6DHkt" data-status="offline" className="sc-pFZIQ sc-tYoTV fxPOXp exGbzQ offline">
+                        <p className="sc-hKgILt cdcUDS">Vendedora Monise * Licença Maternidade</p>
+                        </a>
+                    </div>
+                </div> */}
+
+
+
+
+                <div className="row">
+                    {equipe.map(data => (
+
+                        <div key={data.id} className="column">
+                            <a href={`#${data.link}`} rel={data.id} onClick={(e) => aoclicar(e)} data-id={data.id} data-status={`${idc(data.id)}`}
+                                className={`sc-pFZIQ sc-tYoTV fxPOXp exGbzQ ${idc(data.id)}`}>
+                                <img src={data.img} alt={data.nome} /></a>
+                            <div className="online-indicator dentro">
+                                <span className="blink blinkonline"></span>
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+
+                <div className="sub">
+                    <div className="offline-indicator">
+                        <span className="blink blinkoffline"></span>
+                    </div>
+
+                    <h2 className="online-text text-vermelho">Equipe Offline</h2>
+                </div>
+                <div className="row">
+                    {equipeoff.map(data => (
+
+                        <div key={data.id} className="column">
+
+
+                            <img src={data.img} alt={data.nome} />
+                            <div className="offline-indicator dentro">
+                                <span className="blink blinkoffline"></span>
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+
+
+
 
                 {/* <a href="#" onClick={(e) => catraca(e)} >catraca</a> */}
+                <a href="#" onClick={() => limpar()} >º</a>
             </main>
-            
+
         </div>
     )
 }
