@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import api from '../services/api';
 import Head from 'next/head'
-//import Image from 'next/image'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 function Home() {
@@ -147,7 +147,7 @@ function Home() {
 
             <main className={styles.main}>
                 {/* <Image src="/mo.png" alt="Vercel Logo" width={100} height={100} /> */}
-                <img className="logo" src="/mo.png" alt="Vercel Logo" />
+                <div id="logo"><Image className="logo" src="/mo.png" alt="Vercel Logo"  width={100} height={60}  /></div>
                 {/* {src: 'foo.ogg', type: 'video/ogg'} */}
                 {/* <h1 className={styles.title}>
                     Nosso atendimento é pelo Whatsapp
