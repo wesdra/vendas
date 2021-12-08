@@ -10,7 +10,6 @@ function Home() {
 
     useEffect(() => {
         const lista = [
-            { nome: 'Rogerio', img: '/img/rogerio.png', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM', antigo: '3jAKvyw' },
             { nome: 'Fernanda', img: '/img/fernanda.png', link: 'https://bit.ly/39TYFVO', id: '39TYFVO', antigo: '36N1mq8' },
             { nome: 'Ednaldo', img: '/img/ednaldo.png', link: 'https://bit.ly/39WBASx', id: '39WBASx', antigo: '3jbAWED' },
             { nome: 'Taina', img: '/img/taina.png', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt', antigo: '2UIs0yd' },
@@ -27,6 +26,8 @@ function Home() {
         setEquipe(novalista);
         setEquipeoff(listaoff);
     }, []);
+
+    //  { nome: 'Rogerio', img: '/img/rogerio.png', link: 'https://bit.ly/3AZ8mOM', id: '3AZ8mOM', antigo: '3jAKvyw' },
     // { nome: 'Vendedor Ednaldo', link: 'https://bit.ly/3jbAWED', id: '3jbAWED' },
     // { nome: 'Vendedor Wésdra', link: 'https://bit.ly/36nqtRk"', id: '36nqtRk' },
     // { nome: 'Vendedor João Ruth', link: 'https://bit.ly/3uqAvM0', id: '3uqAvM0' },
