@@ -15,7 +15,7 @@ function Home() {
             { nome: 'Taina', img: '/img/taina.png', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt', antigo: '2UIs0yd' },
             { nome: 'Aline', img: '/img/alinee.png', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq', antigo: '3vMpGVq' },
             { nome: 'Marta', img: '/img/marta.png', link: 'https://bit.ly/3BOTmCJ', id: '3BOTmCJ', antigo: '3BOTmCJ' },
-            // { nome: 'Daniel', img: '/img/daniel.png', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n', antigo: '3dn8nA0' }
+            { nome: 'Daniel', img: '/img/daniel.png', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n', antigo: '3dn8nA0' }
         ];
         const listaoff = [
             { nome: 'Monise', img: '/img/monise.png', link: 'https://bit.ly/3onMfOk', id: '3onMfOk', antigo: '3295waJ' }
