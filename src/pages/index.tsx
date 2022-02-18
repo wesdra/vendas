@@ -10,7 +10,7 @@ function Home() {
 
     useEffect(() => {
         const lista = [
-            { nome: 'Fernanda', img: '/img/fernanda.png', link: 'https://bit.ly/39TYFVO', id: '39TYFVO', antigo: '36N1mq8' },
+            
             { nome: 'Ednaldo', img: '/img/ednaldo.png', link: 'https://bit.ly/39WBASx', id: '39WBASx', antigo: '3jbAWED' },
             { nome: 'Taina', img: '/img/taina.png', link: 'https://bit.ly/2Y6DHkt', id: '2Y6DHkt', antigo: '2UIs0yd' },
             { nome: 'Aline', img: '/img/alinee.png', link: 'https://bit.ly/3vMpGVq', id: '3vMpGVq', antigo: '3vMpGVq' },
@@ -18,7 +18,8 @@ function Home() {
             { nome: 'Daniel', img: '/img/daniel.png', link: 'https://bit.ly/3kSrZ5n', id: '3kSrZ5n', antigo: '3dn8nA0' }
         ];
         const listaoff = [
-            { nome: 'Monise', img: '/img/monise.png', link: 'https://bit.ly/3onMfOk', id: '3onMfOk', antigo: '3295waJ' }
+            { nome: 'Monise', img: '/img/monise.png', link: 'https://bit.ly/3onMfOk', id: '3onMfOk', antigo: '3295waJ' },
+            { nome: 'Fernanda', img: '/img/fernanda-ferias.png', link: 'https://bit.ly/39TYFVO', id: '39TYFVO', antigo: '36N1mq8' }
         ];
         var novalista = lista.sort(function () {
             return 0.6 - Math.random();
@@ -125,6 +126,7 @@ function Home() {
     }
 
     return (
+       
         <div className={styles.container}>
             <Head>
                 <title>Mega Outlet</title>
@@ -238,9 +240,6 @@ function Home() {
                     ))}
 
                 </div>
-
-
-
 
 
                 {/* <a href="#" onClick={(e) => catraca(e)} >catraca</a> */}
