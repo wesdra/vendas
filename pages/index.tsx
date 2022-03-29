@@ -106,9 +106,10 @@ const Home: NextPage = () => {
             <Head>
                 <title>Mega Outlet - Vendas</title>
                 <meta name="description" content="Mega Outlet - Vendas" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" rel="modulepreload" /> */}
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
+
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 

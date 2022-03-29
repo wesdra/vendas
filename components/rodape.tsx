@@ -4,12 +4,12 @@ import styles from '../styles/Home.module.css'
 const Rodape = () => (
     <>
     <div className={styles.rede}>
-    <span> <a href="https://instagram.com/megaoutlet_2" target={"_blank"}>
+    <span> <a href="https://instagram.com/megaoutlet_2" target={"_blank"} rel="noopener noreferrer">
         <Image src="/icon-instagram.svg" alt="Instagram" height={20} width={20} />
 
     </a></span>
 
-    <span><a href="https://facebook.com/megaoutlesofa" target={"_blank"}>
+    <span><a href="https://facebook.com/megaoutlesofa" target={"_blank"} rel="noopener noreferrer">
         <Image src="/icon-facebook.svg" alt="Instagram" height={20} width={20} />
 
     </a></span>
