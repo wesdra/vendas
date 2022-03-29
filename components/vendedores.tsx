@@ -1,0 +1,187 @@
+import { database } from '../services/firebase'
+import styles from '../styles/Home.module.css'
+import { useState, useEffect } from 'react'
+import { useToasts } from 'react-toast-notifications'
+
+interface Ivendedores {
+    chave:string
+    nome: string
+    img: string
+    online: boolean
+    link: string
+    id: string
+
+}
+
+export default function Vendedores() {
+
+    const { addToast } = useToasts()
+
+    const [vendedores, setVendedores] = useState<Ivendedores[]>([])
+    const mergeStyles = (styleArray: string[]) => (styleArray.map((style: string) => `${style}`).join(" "));
+
+    useEffect(() => {
+        const refVendedores = database.ref('vendedores')
+
+
+        refVendedores.on('value', resultado => {
+
+            const dados = Object.entries<Ivendedores>(resultado.val() ?? {}).map(([chave, valor]) => {
+                return {
+                    "chave": chave,
+                    "nome": valor.nome,
+                    "img": valor.img,
+                    "online": valor.online,
+                    "link": valor.link,
+                    "id": valor.id,
+                }
+            })
+
+            var novalista = dados.sort(function () {
+                return 0.6 - Math.random();
+            });
+
+            setVendedores(novalista)
+        })
+    }, [])
+
+
+    function redirect(id: string| undefined):void {
+        setTimeout(function () {
+            //window.location.assign("https://bit.ly/" + id);
+            window.location.href = "https://bit.ly/" + id;
+        }, 10);
+    }
+
+    // function catraca(e: any) {
+    //     e.preventDefault()
+
+    //     api.post('/api/vendedor').then(response => {
+    //         console.log(response.data);
+    //         //console.log(response.data.urlwhatsapp);
+    //         redirect(response.data.urlwhatsapp.replace('https://bit.ly/', ''));
+    //     });
+
+    // }
+
+
+    function add(id: string | undefined):void {
+        if (id) {
+            localStorage.setItem("moid", id);
+        }
+    }
+    function get() {
+        return localStorage.getItem("moid");
+    }
+
+    function limpar() {
+        //e.preventDefault()
+        localStorage.removeItem("moid");
+
+        setTimeout(function () {
+            //window.location.assign("/");
+            window.location.href = "/";
+        }, 10);
+    }
+
+    function idc(id: string) {
+        var atual = localStorage.getItem("moid");
+        var idc = atual === id ? "online" : "offline";
+        if (atual === null)
+            idc = "online";
+
+        return idc
+    }
+
+    // function buscaPorId(id: string){
+    //     var vend = equipe.find(item => item.antigo = id);
+    //     console.log('vend',vend);
+    //     return vend.id;
+    // }
+
+
+    function aoclicar(e: any) {
+        e.preventDefault()
+        const target = e.currentTarget as HTMLLinkElement;
+        //console.log(target.dataset.id)
+        //console.log(target.dataset.status)
+        var status = (target.dataset.status);
+        var id = (target.dataset.id);
+
+        //e.preventDefault()
+        // console.log(e.currentTarget.dataset.id)
+        // console.log(e.currentTarget.dataset.status)
+        // var status = (e.currentTarget.dataset.status);
+        // var id = (e.currentTarget.dataset.id);
+
+        if (status === "offline") {
+          addToast("O Vendedor selecionado está offline.", {
+            appearance: 'error',
+            autoDismiss: true,
+          })
+          return
+        }    
+
+        //se o ultimo atendimento estiver offline permite chamar outro
+        // const result = vendedores.find(item => item.id === get());
+        // if (result) {
+        //     add(id);
+        //     redirect(id);
+        // }
+
+
+        if (status === "online") {
+            add(id);
+            redirect(id);
+        }
+
+        if (status === "offline") {
+            var atual = get();
+            var redir = atual != null ? atual : id;
+            redirect(redir);
+        }
+    }
+
+
+    return (
+        <div className={styles.atendimento}>
+            {vendedores.map(data => (
+
+
+                            <a key={data.id}  
+                            href={`#${data.link}`} 
+                            rel={data.id} 
+                            onClick={(e) => aoclicar(e)} 
+                            data-id={data.id} 
+                            data-status={`${!!data.online 
+                                ? 'online'
+                                : 'offline'}`} 
+                            className={`${!!data.online 
+                                ? mergeStyles([styles.vendedores])
+                                : mergeStyles([styles.vendedores, styles.off])}`}
+                            >
+
+                            {/* // <a  key={data.id} href={`${!!data.online 
+                            //     ? data.link
+                            //     : '#'}`} 
+                            //     className={`${!!data.online 
+                            //         ? mergeStyles([styles.vendedores])
+                            //         : mergeStyles([styles.vendedores, styles.off])}`}
+                            //     > */}
+                            <div className={styles.iconcontainer}>
+                                <img className={styles.vendimg} src={data.img} alt={data.nome} />
+                                <div className={`${!!data.online 
+                                ? mergeStyles([styles.statuscircle, styles.online])
+                                : mergeStyles([styles.statuscircle, styles.offline])}`}
+                                ></div>
+                            </div>
+
+                            <span>{data.nome} </span>
+                            </a>
+
+
+            ))}
+        </div>
+    )
+}
+
