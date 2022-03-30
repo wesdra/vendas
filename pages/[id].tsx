@@ -2,6 +2,7 @@ import firebase from 'firebase'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { useEffect, useMemo, useState } from 'react'
 import { Contatos } from '../components/contatos'
 import { Rodape } from '../components/rodape'
@@ -58,7 +59,7 @@ const Cupons: NextPage = () => {
           "nome": snap.val().nome,
           "regatado": snap.val().regatado,
           "telefone": snap.val().telefone,
-          "acesso": qtdeacessp+1
+          "acesso": qtdeacessp + 1
         }
         dbcupom.child((snap.key || '').toString()).update(cupomcurent)
 
@@ -89,6 +90,19 @@ const Cupons: NextPage = () => {
         <meta name="description" content="Mega Outlet - Cupom de desconto" />
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-J2T81LMTJV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-J2T81LMTJV');
+                `}
+        </Script>
       </Head>
 
       <main className={styles.main}>

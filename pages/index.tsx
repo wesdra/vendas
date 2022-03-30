@@ -7,6 +7,7 @@ import { Rodape } from '../components/rodape'
 import dynamic from 'next/dynamic'
 import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase'
+import Script from 'next/script'
 
 const DynamicVendedores = dynamic(
     () => import('../components/vendedores'),
@@ -22,83 +23,83 @@ const Home: NextPage = () => {
 
     // function gravarVendedores(event: FormEvent) {
     //     event.preventDefault()
-   
-//    const ref = database.ref('cupons')
-//     const cupomcurent = [{
-//         "DataCadastro": "2022\/3\/29",
-//         "cupom": "WES123",
-//         "email": "wesdralima@gmail.com",
-//         "id": "2255",
-//         "municipio": "COTIA",
-//         "nome": "Wesdra",
-//         "regatado":false,
-//         "telefone": "5511940413848",
-//         "acesso": 0
-//       },
-//       {
-//         "DataCadastro": "2022\/3\/29",
-//         "cupom": "FER13213",
-//         "email": "Fernanda@gmail.com",
-//         "id": "2256",
-//         "municipio": "COTIA",
-//         "nome": "Fernanda",
-//         "regatado":false,
-//         "telefone": "5511992505764",
-//         "acesso": 0
-//       },
-//       {
-//         "DataCadastro": "2022\/3\/29",
-//         "cupom": "TA364654",
-//         "email": "talita@gmail.com",
-//         "id": "2257",
-//         "municipio": "COTIA",
-//         "nome": "Talita",
-//         "regatado":false,
-//         "telefone": "5511992057241",
-//         "acesso": 0
-//       },
-//     ]
 
-//     { cupomcurent.map(cupons => (ref.push(cupons))) }
+    //    const ref = database.ref('cupons')
+    //     const cupomcurent = [{
+    //         "DataCadastro": "2022\/3\/29",
+    //         "cupom": "WES123",
+    //         "email": "wesdralima@gmail.com",
+    //         "id": "2255",
+    //         "municipio": "COTIA",
+    //         "nome": "Wesdra",
+    //         "regatado":false,
+    //         "telefone": "5511940413848",
+    //         "acesso": 0
+    //       },
+    //       {
+    //         "DataCadastro": "2022\/3\/29",
+    //         "cupom": "FER13213",
+    //         "email": "Fernanda@gmail.com",
+    //         "id": "2256",
+    //         "municipio": "COTIA",
+    //         "nome": "Fernanda",
+    //         "regatado":false,
+    //         "telefone": "5511992505764",
+    //         "acesso": 0
+    //       },
+    //       {
+    //         "DataCadastro": "2022\/3\/29",
+    //         "cupom": "TA364654",
+    //         "email": "talita@gmail.com",
+    //         "id": "2257",
+    //         "municipio": "COTIA",
+    //         "nome": "Talita",
+    //         "regatado":false,
+    //         "telefone": "5511992057241",
+    //         "acesso": 0
+    //       },
+    //     ]
+
+    //     { cupomcurent.map(cupons => (ref.push(cupons))) }
 
 
-        // const ref = database.ref('vendedores')
-        // const vendedores = [
+    // const ref = database.ref('vendedores')
+    // const vendedores = [
 
-        //     { nome: 'Fernanda', img: '/fernanda.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39TYFVO', id: '39TYFVO' },
-        //     { nome: 'Ednaldo', img: '/ednaldo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39WBASx', id: '39WBASx' },
-        //     { nome: 'Taina', img: '/taina.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/2Y6DHkt', id: '2Y6DHkt' },
-        //     { nome: 'Aline', img: '/aline.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3vMpGVq', id: '3vMpGVq' },
-        //     { nome: 'Marta', img: '/marta.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3BOTmCJ', id: '3BOTmCJ' },
-        //     { nome: 'Monise', img: '/monise.svg', online: false, link: 'https://vendas.megaoutletsofa.com.br/3onMfOk', id: '3onMfOk' },
+    //     { nome: 'Fernanda', img: '/fernanda.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39TYFVO', id: '39TYFVO' },
+    //     { nome: 'Ednaldo', img: '/ednaldo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39WBASx', id: '39WBASx' },
+    //     { nome: 'Taina', img: '/taina.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/2Y6DHkt', id: '2Y6DHkt' },
+    //     { nome: 'Aline', img: '/aline.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3vMpGVq', id: '3vMpGVq' },
+    //     { nome: 'Marta', img: '/marta.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3BOTmCJ', id: '3BOTmCJ' },
+    //     { nome: 'Monise', img: '/monise.svg', online: false, link: 'https://vendas.megaoutletsofa.com.br/3onMfOk', id: '3onMfOk' },
 
-        // ];
+    // ];
 
-        // { vendedores.map(vendedor => (ref.push(vendedor))) }
+    // { vendedores.map(vendedor => (ref.push(vendedor))) }
 
 
     //     setValor('')
     // }
 
-// function atualizar(){
-//     const ref = database.ref('cupons')
-    
-//     const dados = {
-//         "id":"9052",
-//         "telefone":"5511947272293",
-//         "nome":"Eelisabeth",
-//         "email":null,
-//         "municipio":"SAO PAULO",
-//         "DataCadastro":"2020\/9\/17",
-//         "cupom":"23381174",
-//         "regatado":"false",
-//         "dtregatado":null
-//         }
+    // function atualizar(){
+    //     const ref = database.ref('cupons')
 
-//         ref.child('chave').update(dados)
-    
-    
-// }
+    //     const dados = {
+    //         "id":"9052",
+    //         "telefone":"5511947272293",
+    //         "nome":"Eelisabeth",
+    //         "email":null,
+    //         "municipio":"SAO PAULO",
+    //         "DataCadastro":"2020\/9\/17",
+    //         "cupom":"23381174",
+    //         "regatado":"false",
+    //         "dtregatado":null
+    //         }
+
+    //         ref.child('chave').update(dados)
+
+
+    // }
 
 
     return (
@@ -109,8 +110,20 @@ const Home: NextPage = () => {
                 {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" rel="modulepreload" /> */}
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
-
                 <link rel="icon" href="/favicon.ico" />
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-J2T81LMTJV"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-J2T81LMTJV');
+                `}
+                </Script>
             </Head>
 
             <main className={styles.main}>
