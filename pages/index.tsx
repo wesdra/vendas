@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase'
 import Script from 'next/script'
+import { GoogleAnalytics } from '../components/googleanalytics'
 
 const DynamicVendedores = dynamic(
     () => import('../components/vendedores'),
@@ -111,23 +112,10 @@ const Home: NextPage = () => {
                 <link rel="preconnect" href="https://fonts.gstatic.com" rel="modulepreload" /> */}
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
                 <link rel="icon" href="/favicon.ico" />
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-J2T81LMTJV"
-                    strategy="afterInteractive"
-                />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){window.dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-J2T81LMTJV');
-                `}
-                </Script>
             </Head>
 
             <main className={styles.main}>
-
+                <GoogleAnalytics />
 
                 {/* <form onSubmit={gravarVendedores}>
                     <input type="text" name={valor} onChange={(event => setValor(event.target.value))} />
