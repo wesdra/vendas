@@ -94,20 +94,20 @@ const Cupons: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-      <GoogleAnalytics />
+        <GoogleAnalytics />
         <img src="/megaoutlet.svg" alt="Mega Outlet" className={styles.logo} />
 
 
         <h1 className={styles.title}>{cupom?.nome}, parabéns!</h1>
 
 
-        <h3><span className={styles.desconto} >Você ganhou 40% de desconto.</span><br />
-          O seu cupom é <span className={styles.cupom} >{cupom?.cupom}</span> </h3>
+        <h2><span className={styles.desconto} >Você ganhou 40% de desconto,</span><br />
+          seu cupom é: <span className={styles.cupom} >{cupom?.cupom}</span> </h2>
 
 
-        <h3 >Atenção: você pode parcelar em até três vezes e utilizar até dia 30/04/2022.</h3>
+        <h5>Atenção: você pode parcelar em até três vezes, e utilizar seu cupom até dia 30/04/2022.</h5>
 
-
+        <small  >Fale con nossos consultores de venda pelo WhatsApp</small> <br />
 
         <Vendedores />
         <img src="/loja.png" width={300} alt="Loja Mega Outlet" />

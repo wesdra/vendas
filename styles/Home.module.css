@@ -290,3 +290,7 @@
     transform: rotate(360deg);
   }
 }
+
+.link {
+  color       : #00A9B6;
+}
