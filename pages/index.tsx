@@ -101,13 +101,18 @@ const Home: NextPage = () => {
 
 
     // }
-
+   
 
     return (
         <div className={styles.container}>
             <Head>
                 <title>Mega Outlet - Vendas</title>
                 <meta name="description" content="Mega Outlet - Vendas" />
+                <meta property="og:title" content="Mega Outlet" />
+                <meta property="og:description" content="Mega Outlet - Loja de móveis: sofás, mesas, cadeiras, polronas, colchões, sofá cama, mesa de cabeceiras..." />
+                <meta property="og:url" content="https://vendas.megaoutletsofa.com.br/" />
+                <meta property="og:image" content="https://vendas.megaoutletsofa.com.br/loja.png" />
+                <meta property="og:type" content="website" />
                 {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" rel="modulepreload" /> */}
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />

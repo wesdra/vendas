@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useToasts } from 'react-toast-notifications'
 
 interface Ivendedores {
-    chave:string
+    chave: string
     nome: string
     img: string
     online: boolean
@@ -21,32 +21,32 @@ export default function Vendedores() {
     const mergeStyles = (styleArray: string[]) => (styleArray.map((style: string) => `${style}`).join(" "));
 
     useEffect(() => {
-        const refVendedores = database.ref('vendedores')
 
+        (async () => {
+            const refVendedores = database.ref('vendedores')
+            refVendedores.on('value', resultado => {
 
-        refVendedores.on('value', resultado => {
-
-            const dados = Object.entries<Ivendedores>(resultado.val() ?? {}).map(([chave, valor]) => {
-                return {
-                    "chave": chave,
-                    "nome": valor.nome,
-                    "img": valor.img,
-                    "online": valor.online,
-                    "link": valor.link,
-                    "id": valor.id,
-                }
+                const dados = Object.entries<Ivendedores>(resultado.val() ?? {}).map(([chave, valor]) => {
+                    return {
+                        "chave": chave,
+                        "nome": valor.nome,
+                        "img": valor.img,
+                        "online": valor.online,
+                        "link": valor.link,
+                        "id": valor.id,
+                    }
+                })
+                var novalista = dados.sort(function () {
+                    return 0.6 - Math.random();
+                });
+                setVendedores(novalista)
             })
 
-            var novalista = dados.sort(function () {
-                return 0.6 - Math.random();
-            });
-
-            setVendedores(novalista)
-        })
+        })()
     }, [])
 
 
-    function redirect(id: string| undefined):void {
+    function redirect(id: string | undefined): void {
         setTimeout(function () {
             //window.location.assign("https://bit.ly/" + id);
             window.location.href = "https://bit.ly/" + id;
@@ -65,7 +65,7 @@ export default function Vendedores() {
     // }
 
 
-    function add(id: string | undefined):void {
+    function add(id: string | undefined): void {
         if (id) {
             localStorage.setItem("moid", id);
         }
@@ -115,12 +115,12 @@ export default function Vendedores() {
         // var id = (e.currentTarget.dataset.id);
 
         if (status === "offline") {
-          addToast("O Vendedor selecionado está offline.", {
-            appearance: 'error',
-            autoDismiss: true,
-          })
-          return
-        }    
+            addToast("O Vendedor selecionado está offline.", {
+                appearance: 'error',
+                autoDismiss: true,
+            })
+            return
+        }
 
         //se o ultimo atendimento estiver offline permite chamar outro
         // const result = vendedores.find(item => item.id === get());
@@ -141,43 +141,43 @@ export default function Vendedores() {
             redirect(redir);
         }
     }
-
+    if (!vendedores) return <div>Loading</div>
 
     return (
         <div className={styles.atendimento}>
             {vendedores.map(data => (
 
 
-                            <a key={data.id}  
-                            href={`#${data.link}`} 
-                            rel={data.id} 
-                            onClick={(e) => aoclicar(e)} 
-                            data-id={data.id} 
-                            data-status={`${!!data.online 
-                                ? 'online'
-                                : 'offline'}`} 
-                            className={`${!!data.online 
-                                ? mergeStyles([styles.vendedores])
-                                : mergeStyles([styles.vendedores, styles.off])}`}
-                            >
+                <a key={data.id}
+                    href={`#${data.link}`}
+                    rel={data.id}
+                    onClick={(e) => aoclicar(e)}
+                    data-id={data.id}
+                    data-status={`${!!data.online
+                        ? 'online'
+                        : 'offline'}`}
+                    className={`${!!data.online
+                        ? mergeStyles([styles.vendedores])
+                        : mergeStyles([styles.vendedores, styles.off])}`}
+                >
 
-                            {/* // <a  key={data.id} href={`${!!data.online 
+                    {/* // <a  key={data.id} href={`${!!data.online 
                             //     ? data.link
                             //     : '#'}`} 
                             //     className={`${!!data.online 
                             //         ? mergeStyles([styles.vendedores])
                             //         : mergeStyles([styles.vendedores, styles.off])}`}
                             //     > */}
-                            <div className={styles.iconcontainer}>
-                                <img className={styles.vendimg} src={data.img} alt={data.nome} />
-                                <div className={`${!!data.online 
-                                ? mergeStyles([styles.statuscircle, styles.online])
-                                : mergeStyles([styles.statuscircle, styles.offline])}`}
-                                ></div>
-                            </div>
+                    <div className={styles.iconcontainer}>
+                        <img className={styles.vendimg} src={data.img} alt={data.nome} />
+                        <div className={`${!!data.online
+                            ? mergeStyles([styles.statuscircle, styles.online])
+                            : mergeStyles([styles.statuscircle, styles.offline])}`}
+                        ></div>
+                    </div>
 
-                            <span>{data.nome} </span>
-                            </a>
+                    <span>{data.nome} </span>
+                </a>
 
 
             ))}
