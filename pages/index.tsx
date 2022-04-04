@@ -5,9 +5,6 @@ import styles from '../styles/Home.module.css'
 import { Contatos } from '../components/contatos'
 import { Rodape } from '../components/rodape'
 import dynamic from 'next/dynamic'
-import { FormEvent, useState } from 'react'
-import { database } from '../services/firebase'
-import Script from 'next/script'
 import { GoogleAnalytics } from '../components/googleanalytics'
 
 const DynamicVendedores = dynamic(
@@ -113,8 +110,6 @@ const Home: NextPage = () => {
                 <meta property="og:url" content="https://vendas.megaoutletsofa.com.br/" />
                 <meta property="og:image" content="https://vendas.megaoutletsofa.com.br/loja.png" />
                 <meta property="og:type" content="website" />
-                {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" rel="modulepreload" /> */}
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
