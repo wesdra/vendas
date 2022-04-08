@@ -46,11 +46,11 @@ export default function Vendedores() {
     }, [])
 
 
-    function redirect(id: string | undefined): void {
+    function redirect(id: string | undefined, time:number): void {
         setTimeout(function () {
             //window.location.assign("https://bit.ly/" + id);
             window.location.href = "https://bit.ly/" + id;
-        }, 10);
+        }, time);
     }
 
     // function catraca(e: any) {
@@ -105,8 +105,8 @@ export default function Vendedores() {
         const target = e.currentTarget as HTMLLinkElement;
         //console.log(target.dataset.id)
         //console.log(target.dataset.status)
-        var status = (target.dataset.status);
-        var id = (target.dataset.id);
+        let status = (target.dataset.status);
+        let id = (target.dataset.id);
 
         //e.preventDefault()
         // console.log(e.currentTarget.dataset.id)
@@ -123,22 +123,39 @@ export default function Vendedores() {
         }
 
         //se o ultimo atendimento estiver offline permite chamar outro
-        // const result = vendedores.find(item => item.id === get());
-        // if (result) {
-        //     add(id);
-        //     redirect(id);
-        // }
-
+        let getid = get()
+        const result = vendedores.find(item => item.id === getid);
+        if (result) {
+            console.log(result)
+            if (result.online) {
+                console.log('online', result.id)
+                addToast(`Você está em atendimento aberto com o colaborador  ${result.nome}!`, {
+                    appearance: 'info',
+                    autoDismiss: true,
+         
+                })
+                add(result.id);
+                redirect(result.id, 5000);
+                return
+            } else {
+                console.log('online', result.id)
+                add(id);
+                redirect(id,1);
+                return
+            }
+        }
 
         if (status === "online") {
             add(id);
-            redirect(id);
+            redirect(id,1);
+            return
         }
 
         if (status === "offline") {
             var atual = get();
             var redir = atual != null ? atual : id;
-            redirect(redir);
+            redirect(redir,1);
+            return
         }
     }
     if (!vendedores) return <div>Loading</div>

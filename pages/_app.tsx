@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (<>
     {/* <NextNProgress /> */}
-    <ToastProvider>
+    <ToastProvider placement="bottom-center">
       <Component {...pageProps} />
     </ToastProvider>
     
