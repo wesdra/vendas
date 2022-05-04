@@ -6,6 +6,7 @@ import { Contatos } from '../components/contatos'
 import { Rodape } from '../components/rodape'
 import dynamic from 'next/dynamic'
 import { GoogleAnalytics } from '../components/googleanalytics'
+import Pixel from '../components/pixel/facebook'
 
 const DynamicVendedores = dynamic(
     () => import('../components/vendedores'),
@@ -98,7 +99,7 @@ const Home: NextPage = () => {
 
 
     // }
-   
+
 
     return (
         <div className={styles.container}>
@@ -112,6 +113,7 @@ const Home: NextPage = () => {
                 <meta property="og:type" content="website" />
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
                 <link rel="icon" href="/favicon.ico" />
+                <Pixel />
             </Head>
 
             <main className={styles.main}>
