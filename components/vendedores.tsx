@@ -150,7 +150,7 @@ export default function Vendedores() {
          
                 })
                 add(result.id);
-                redirect(result.id, 5000);
+                redirect(result.id, 2000);
                 return
             } else {
                 console.log('online', result.id)
