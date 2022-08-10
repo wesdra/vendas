@@ -17,33 +17,48 @@ export default function Vendedores() {
 
     const { addToast } = useToasts()
 
-    const [vendedores, setVendedores] = useState<Ivendedores[]>([])
+    //const [vendedores, setVendedores] = useState<Ivendedores[]>([])
     const mergeStyles = (styleArray: string[]) => (styleArray.map((style: string) => `${style}`).join(" "));
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        (async () => {
-            const refVendedores = database.ref('vendedores')
-            refVendedores.on('value', resultado => {
+    //     (async () => {
+    //         const refVendedores = database.ref('vendedores')
+    //         refVendedores.on('value', resultado => {
 
-                const dados = Object.entries<Ivendedores>(resultado.val() ?? {}).map(([chave, valor]) => {
-                    return {
-                        "chave": chave,
-                        "nome": valor.nome,
-                        "img": valor.img,
-                        "online": valor.online,
-                        "link": valor.link,
-                        "id": valor.id,
-                    }
-                })
-                var novalista = dados.sort(function () {
-                    return 0.6 - Math.random();
-                });
-                setVendedores(novalista)
-            })
+    //             const dados = Object.entries<Ivendedores>(resultado.val() ?? {}).map(([chave, valor]) => {
+    //                 return {
+    //                     "chave": chave,
+    //                     "nome": valor.nome,
+    //                     "img": valor.img,
+    //                     "online": valor.online,
+    //                     "link": valor.link,
+    //                     "id": valor.id,
+    //                 }
+    //             })
+    //             var novalista = dados.sort(function () {
+    //                 return 0.6 - Math.random();
+    //             });
+    //             setVendedores(novalista)
+    //         })
 
-        })()
-    }, [])
+    //     })()
+    // }, [])
+
+
+    const vendedores = [
+
+        { nome: 'Fernanda', img: '/fernanda.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39TYFVO', id: '39TYFVO' },
+        { nome: 'Gustavo', img: '/luizgustavo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/37zzbPU', id: '37zzbPU' },
+       // { nome: 'Ednaldo', img: '/ednaldo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39WBASx', id: '39WBASx' },
+        { nome: 'Taina', img: '/taina.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/2Y6DHkt', id: '2Y6DHkt' },
+        { nome: 'Aline', img: '/aline.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3vMpGVq', id: '3vMpGVq' },
+       // { nome: 'Marta', img: '/marta.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3BOTmCJ', id: '3BOTmCJ' },
+       // { nome: 'Monise', img: '/monise.svg', online: false, link: 'https://vendas.megaoutletsofa.com.br/3onMfOk', id: '3onMfOk' },
+
+    ];
+
+
 
 
     function redirect(id: string | undefined, time:number): void {
