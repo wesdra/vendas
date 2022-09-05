@@ -64,7 +64,8 @@ export default function Vendedores() {
     function redirect(id: string | undefined, time:number): void {
         setTimeout(function () {
             //window.location.assign("https://bit.ly/" + id);
-            window.location.href = "https://bit.ly/" + id;
+           // window.location.href = "https://bit.ly/" + id;
+            window.location.href = "/atendimento/" + id;
         }, time);
     }
 

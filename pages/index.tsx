@@ -114,7 +114,7 @@ const Home: NextPage = () => {
                 <meta property="og:type" content="website" />
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet" />
                 <link rel="icon" href="/favicon.ico" />
-                <Pixel />
+                <Pixel scriptfbq="fbq('track', 'PaginaVendedores');" />
             </Head>
 
             <main className={styles.main}>

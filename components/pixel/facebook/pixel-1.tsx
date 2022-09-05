@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Pixel = () => (
+
+interface Props {
+  scriptfbq:string
+}
+
+ const Pixel = ({ scriptfbq } :Props) => (
+//const Pixel = () => (
   <React.Fragment>
     <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
