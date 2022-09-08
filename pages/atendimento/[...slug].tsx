@@ -22,7 +22,7 @@ export default function Atendimento() {
 
   useEffect(() => {
     if (slug){
-        redirect(slug.toString(), 1000);
+        redirect(slug.toString(), 5000);
     }else{
 
     }
