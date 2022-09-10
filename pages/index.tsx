@@ -128,7 +128,7 @@ const Home: NextPage = () => {
                 <img src="/megaoutlet.svg" alt="mega Outlet" className={styles.logo} />
                 <h1 className={styles.title}>seja bem-vindo!</h1>
                 <br />
-                <small  >Fale conoscos consultores de venda pelo WhatsApp</small> <br />
+                <small  >Fale com nossos consultores de venda pelo WhatsApp</small> <br />
 
 
                 <DynamicVendedores />
