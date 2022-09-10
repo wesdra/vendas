@@ -21,11 +21,11 @@ export default function Atendimento() {
   }
 
   useEffect(() => {
-    if (slug){
-        redirect(slug.toString(), 5000);
-    }else{
-
-    }
+    //if (slug === "39TYFVO"){
+    //    redirect(slug.toString(), 5000);
+    //}else{
+      redirect(slug.toString(), 500);
+    //}
   }, [slug]);
 
   return (
