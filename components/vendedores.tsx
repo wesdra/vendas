@@ -50,7 +50,7 @@ export default function Vendedores() {
 
         { nome: 'Fernanda', img: '/fernanda.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39TYFVO', id: '39TYFVO' },
         { nome: 'Gustavo', img: '/luizgustavo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/37zzbPU', id: '37zzbPU' },
-       // { nome: 'Ednaldo', img: '/ednaldo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39WBASx', id: '39WBASx' },
+        { nome: 'Ednaldo', img: '/ednaldo.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/39WBASx', id: '39WBASx' },
         { nome: 'Taina', img: '/taina.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/2Y6DHkt', id: '2Y6DHkt' },
         { nome: 'Aline', img: '/aline.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3vMpGVq', id: '3vMpGVq' },
        // { nome: 'Marta', img: '/marta.svg', online: true, link: 'https://vendas.megaoutletsofa.com.br/3BOTmCJ', id: '3BOTmCJ' },
