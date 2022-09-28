@@ -6,16 +6,35 @@ import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import React from "react";
 import Pixel from "../../components/pixel/facebook/pixel-1";
+import { VendedoresData, VendedoresDb } from "../../VendedoresDb";
 
 //export default function Categorias({ slug }: string) {
 export default function Atendimento() {
+
   const router = useRouter();
   const slug = router.query.slug || [];
   const lazyRoot = React.useRef(null);
+  
+  const [vendedores, SetVendedores] = useState<VendedoresData[]>(VendedoresDb)
+  
+  
   function redirect(id: string | undefined, time: number): void {
+
+
+
+
     setTimeout(function () {
       //window.location.assign("https://bit.ly/" + id);
-      window.location.href = "https://bit.ly/" + id;
+  
+      //console.log(slug)
+      const result = vendedores.find(item => item.id === id);
+     // console.log(result)
+      if (result) {
+        window.location.href = "" + result.link;
+      }else{
+        window.location.href = "https://wa.me/message/XKSJND5ULUMKK1?utm_source=Luiz+Gustavo"
+      }
+     // window.location.href = "https://bit.ly/" + id;
       
     }, time);
   }
@@ -24,6 +43,8 @@ export default function Atendimento() {
     //if (slug === "39TYFVO"){
     //    redirect(slug.toString(), 5000);
     //}else{
+
+
       redirect(slug.toString(), 500);
     //}
   }, [slug]);
