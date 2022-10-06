@@ -210,7 +210,7 @@ export default function Vendedores() {
                             //         : mergeStyles([styles.vendedores, styles.off])}`}
                             //     > */}
             <div className={styles.iconcontainer}>
-              {/* <img className={styles.vendimg} src={data.img} alt={data.nome} /> */}
+              <img className={styles.vendimg} src={data.img} alt={data.nome} />
               <div
                 className={`${
                   !!data.online
