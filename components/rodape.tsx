@@ -5,7 +5,7 @@ const Rodape = () => (
     <>
     <div className={styles.rede}>
     <span> <a href="https://instagram.com/megaoutlet_2" target={"_blank"} rel="noopener noreferrer">
-        <Image src="/icon-instagram.svg" alt="Instagram" height={20} width={20} />
+        <Image src="/icon-instagram.svg" alt="Instagram" color="#EC268F" height={20} width={20} />
 
     </a></span>
 
@@ -21,10 +21,10 @@ const Rodape = () => (
         target="_blank"
         rel="noopener noreferrer"
     >
-        desenvolvido por {' '}
-        <span>
+        desenvolvido por {' '} Wesdra Lima
+        {/* <span>
             &nbsp;<img src="/logo-wesdra-lima.svg" className={styles.wr} alt="Desenvolvido por Wesdra Lima" />
-        </span>
+        </span> */}
     </a>
 </div>
 </>

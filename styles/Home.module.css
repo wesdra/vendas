@@ -39,7 +39,7 @@
 }
 
 .title a {
-  color          : #00A9B6;
+  color          : #fff;
   text-decoration: none;
 }
 
@@ -98,8 +98,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color       : #00A9B6;
-  border-color: #00A9B6;
+  color       : #fff;
+  border-color: #fff;
 }
 
 .card h2 {
@@ -130,8 +130,9 @@
 }
 .logo{
   width         : 150px;
-  height        : 98px;
-  margin: 20px;;
+  height         : 150px;
+ /* // height        : 98px; */
+  margin: 20px;
 }
 .rede{
   min-width: 200px
@@ -151,7 +152,7 @@
   display: block;
   padding: 0.5rem;
   border-radius  : 10px;
-  border         : 2px solid #eaeaea;
+  border         : 2px solid #EC268F;
   margin-top: 0.8rem;
   min-width: 100px;
   margin:4px; 
@@ -166,10 +167,12 @@
 .vendedores:focus,
 .vendedores:active {
   border:solid 2px;
-  color       : #00A9B6;
-  border-color: #00A9B6;
+  color       : #fff;
+  border-color: #f6afce;
   background: rgb(2,0,36);
-  background: linear-gradient(43deg, rgba(2,0,36,1) 0%, rgba(0,169,182,1) 47%, rgba(255,204,41,1) 100%);
+  background: #EC268F; 
+  /* 
+  linear-gradient(43deg, rgba(2,0,36,1) 0%, rgba(0,169,182,1) 47%, rgba(255,204,41,1) 100%); */
 }
 .wr{
   height: 30px;
@@ -292,5 +295,5 @@
 }
 
 .link {
-  color       : #00A9B6;
+  color       : #fff;
 }
