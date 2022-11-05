@@ -126,7 +126,7 @@ const Home: NextPage = () => {
                 </form> */}
 
                 {/* <img src="/outubrorosa.png" alt="mega Outlet" className={styles.logo} /> */}
-                <img src="/toquedeamor.png" alt="mega Outlet" width={400} />
+                <img src="/novembroazulcancer.png" alt="mega Outlet" width={400} />
                 {/* <h1 className={styles.title}>seja bem-vindo!</h1> */}
                 <br />
                 <small  >Fale com nossos consultores de venda pelo WhatsApp</small> <br />
