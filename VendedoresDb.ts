@@ -21,4 +21,7 @@ export const VendedoresDb = [
 
     { nome: 'Atendente 05', img: '/avatar5.jpg', online: true, link: 'https://bit.ly/3CV3pKa', id: '5511913195773' },
     { nome: 'Atendente 06', img: '/avatar6.jpg', online: true, link: 'https://bit.ly/3rRNKVH', id: '5511959761773' },
+
+    { nome: 'Atendente 07', img: '/avatar7.jpg', online: true, link: 'https://bit.ly/39TYFVO', id: '5511958516111' },
+    { nome: 'Atendente 08', img: '/avatar8.jpg', online: true, link: 'https://bit.ly/39TYFVO', id: '5511958516111' },
 ] 
