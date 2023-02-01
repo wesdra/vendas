@@ -124,9 +124,9 @@ const Home: NextPage = () => {
                     <input type="text" name={valor} onChange={(event => setValor(event.target.value))} />
                     <button type='submit'> enviar</button>
                 </form> */}
-
+<img src="/logo.svg" alt="mega Outlet" className={styles.logo} />
                 {/* <img src="/outubrorosa.png" alt="mega Outlet" className={styles.logo} /> */}
-                <img src="/novembroazulcancer.png" alt="mega Outlet" width={400} />
+                {/* <img src="/novembroazulcancer.png" alt="mega Outlet" width={400} /> */}
                 {/* <h1 className={styles.title}>seja bem-vindo!</h1> */}
                 <br />
                 <small  >Fale com nossos consultores de venda pelo WhatsApp</small> <br />
