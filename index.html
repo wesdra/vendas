@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-center {
+            text-align: center;
+        }
+
+        .customer-testi {
+            cursor: e-resize;
+        }
+
+        .content {
+            padding: 1.5rem !important;
+            border-radius: 0.25rem !important;
+            margin: 0.5rem !important;
+            position: relative !important;
+            -webkit-box-shadow: 0 0 #0000, 0 0 #0000, 0 0 3px rgb(60 72 88 / 0.15) !important;
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 0 3px rgb(60 72 88 / 0.15) !important;
+        }
+
+        .content::before {
+            content: "";
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            position: absolute;
+            left: 50%;
+            bottom: -4px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transform: translate(0, 0) rotate(45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            transform: translate(0, 0) rotate(45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            border-width: 8px;
+            border-top-color: transparent;
+            border-right-color: rgb(255 255 255 / 1);
+            border-bottom-color: rgb(255 255 255 / 1);
+            border-left-color: transparent;
+            -webkit-box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px 2px -1px rgb(60 72 88 / 0.15);
+            box-shadow: 0 0 #0000, 0 0 #0000, 2px 2px 2px -1px rgb(60 72 88 / 0.15);
+            background: #fff;
+            height: 20px;
+            width: 20px;
+        }
+
+        .list-none {
+            list-style-type: none !important;
+            margin-bottom: 0px !important;
+            margin-top: 0.75rem !important;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inline {
+            display: inline !important;
+            text-align: -webkit-match-parent;
+            list-style: none;
+            list-style-type: none !important;
+        }
+
+        .mdi {
+            font-style: italic;
+        }
+
+        .mdi::before {
+            content: url('estrela.svg');
+            display: inline-block;
+            font-size: inherit;
+            text-rendering: auto;
+            line-height: inherit;
+            -webkit-font-smoothing: antialiased;
+            color: rgb(251 191 36 / 1) !important;
+        }
+
+
+
+        .shadow-md {
+            --tw-shadow: 0 5px 13px rgb(60 72 88 / 0.20) !important;
+            --tw-shadow-colored: 0 5px 13px var(--tw-shadow-color) !important;
+            -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+        }
+
+        .rounded-full {
+            border-radius: 9999px !important;
+        }
+        .w-14 {
+    width: 3.5rem !important;
+}
+    </style>
+</head>
+
+<body>
+    <div class="text-center">
+        <div class="customer-testi">
+            <div class="content relative rounded shadow dark:shadow-gray-800 m-2 p-6 bg-white dark:bg-slate-900">
+                <i class="mdi mdi-format-quote-open mdi-48px text-indigo-600"></i>
+                <p class="text-slate-400">" It seems that only fragments of the original text remain in the Lorem Ipsum
+                    texts used today. "</p>
+                <ul class="list-none mb-0 text-amber-400 mt-3">
+                    <li class="inline"><i class="mdi mdi-star"></i></li>
+                    <li class="inline"><i class="mdi mdi-star"></i></li>
+                    <li class="inline"><i class="mdi mdi-star"></i></li>
+                    <li class="inline"><i class="mdi mdi-star"></i></li>
+                    <li class="inline"><i class="mdi mdi-star"></i></li>
+                </ul>
+            </div>
+
+            <div class="text-center mt-5">
+                <img src="https://media.licdn.com/dms/image/C5603AQEX3TyeJNmKlQ/profile-displayphoto-shrink_800_800/0/1643821614990?e=1683763200&v=beta&t=gQgMUzdLSQiXbveHtKMayOiT5ailI4E4A8FJkq9Oxys" class="h-14 w-14 rounded-full shadow-md mx-auto" alt="">
+                <h6 class="mt-2 font-semibold">Calvin Carlo</h6>
+                <span class="text-slate-400 text-sm">Manager</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -30,9 +30,10 @@ export default function Atendimento() {
       const result = vendedores.find(item => item.id === id);
      // console.log(result)
       if (result) {
-        window.location.href = "" + result.link;
+       // window.location.href = "" + result.link;
+        window.location.href = "https://wa.me/5511978971996"
       }else{
-        window.location.href = "https://wa.me/message/XKSJND5ULUMKK1?utm_source=Luiz+Gustavo"
+        window.location.href = "https://wa.me/5511978971996"
       }
      // window.location.href = "https://bit.ly/" + id;
       
